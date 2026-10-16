@@ -1,0 +1,78 @@
+:root {
+  --bg: #1C1712;
+  --textPrimary: #F5EFE4;
+  --text-dim: #B8A891;
+  --bg-elev: #211B15;
+  --chili: #D14B3D;
+  --border: rgba(245, 239, 228, 0.09);
+  --border-hi: rgba(245, 239, 228, 0.18);
+  ---chili-dim: #F0997B;
+  --text-faint: #7C7061;
+  --card: #2A2119;
+  --card-hi: #332820;
+  --saffron: #E3A72B;
+  --saffron-dim: rgba(227, 167, 43, 0.12);
+  --basil: #6B9B6E;
+  --ramp-leaf-bg:rgba(126, 153, 54, 0.18);
+  --ramp-coffee-bg:rgba(160, 105, 35, 0.22);
+  --ramp-ice-bg: rgba(145, 85, 100, 0.25);
+  --ramp-meat-bg:rgba(150, 85, 75, 0.20);
+  --ramp-seed-bg: rgba(65, 125, 105, 0.22);
+  --ramp-leaf-border:rgba(190, 200, 150, 0.25);
+  --ramp-coffee-border:rgba(200, 170, 120, 0.28);
+  --ramp-ice-border: rgba(200, 170, 175, 0.28);
+  --ramp-meat-border:rgba(200, 170, 155, 0.28);
+  --ramp-seed-border:rgba(160, 190, 175, 0.25);
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--textPrimary);
+  margin: 0%;
+  padding: 0%;
+}
+
+.fraunces-medium {
+  font-family: "Fraunces", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings: "SOFT" 0, "WONK" 0;
+}
+
+.fraunces-semibold {
+  font-family: "Fraunces", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-variation-settings: "SOFT" 0, "WONK" 0;
+}
+
+/* ---------- Inter ---------- */
+.inter-regular {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.inter-medium {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.inter-semibold {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* ---------- IBM Plex Mono ---------- */
+.ibm-plex-mono-medium {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 500;
+  font-style: normal;
+}

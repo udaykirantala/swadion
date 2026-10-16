@@ -1,0 +1,62 @@
+.home_page_continer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+    max-width: 1460px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 60px 40px;
+    box-sizing: border-box;
+    margin: 0px 20px 0px 100px;
+}
+
+.home_content {
+    flex: 1;
+    min-width: 0;
+    max-width: 650px;
+}
+
+.home_floting_icons {
+    position: relative;
+    flex: 1;
+    min-width: 0;
+    max-width: 600px;
+    height: 450px;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    .home_page_continer {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 30px;
+        padding: 30px 20px;
+    }
+
+    .home_content {
+        max-width: 100%;
+    }
+
+    .home_floting_icons {
+        width: 100%;
+        max-width: 100%;
+        height: 400px;
+    }
+}
+.leaf_card:hover{
+    transform: scale(1.08);
+}
+.meat_card:hover{
+    transform: scale(1.08);
+}
+.seed_card:hover{
+    transform: scale(1.08);
+}
+.coffee_card:hover{
+    transform: scale(1.08);
+}
+.ice_card:hover{
+    transform: scale(1.08);
+}

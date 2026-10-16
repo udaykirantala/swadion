@@ -1,0 +1,51 @@
+.underdev_container {
+    min-height: calc(100vh - var(--nav-h, 72px));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px var(--gutter, 40px);
+}
+
+.underdev_logo {
+    width: 72px;
+    margin-bottom: 22px;
+}
+
+.underdev_badge {
+    background: var(--saffron-dim);
+    color: var(--saffron);
+    font-size: 12px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 18px;
+}
+
+.underdev_title {
+    font-size: 32px;
+    color: var(--text);
+    margin-bottom: 10px;
+}
+
+.underdev_message {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-dim);
+    max-width: 420px;
+    margin-bottom: 30px;
+}
+
+.underdev_btn {
+    background: var(--card);
+    color: var(--text-dim);
+    font-size: 13px;
+    padding: 10px 18px;
+    border-radius: 9px;
+    border: 0.5px solid var(--border-hi);
+    transition: all .16s;
+}
+.underdev_btn:hover {
+    color: var(--text);
+    border-color: var(--saffron);
+}
