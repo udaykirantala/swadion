@@ -6,17 +6,19 @@ import coffee from "../../assets/coffee.png";
 import icecream from "../../assets/icecream.png";
 import meat from "../../assets/meat.png";
 import seed from "../../assets/seed.png";
+import { BrowseByCategory } from "../../components/browseByCategory/BrowseByCategory";
+import { BrowseByCountry } from "../../components/browseByCountry/BrowseByCountry";
 
 
 export const Home = () => {
     return (
-        <div className="home_page_continer">
-            <div className="home_content">
-                <HomeDis />
-            </div>
+        <div className="home_page">
+            <div className="home_page_continer">
+                <div className="home_content">
+                    <HomeDis />
+                </div>
 
-            <div className="home_floting_icons">
-                <div className="leaf_card">
+                <div className="home_floting_icons">
                     <HomeIconShow
                         imgsrc={leaf}
                         style={{
@@ -34,8 +36,6 @@ export const Home = () => {
                             alignItems: "center",
                         }}
                     />
-                </div>
-                <div className="meat_card">
                     <HomeIconShow
                         imgsrc={meat}
                         style={{
@@ -52,10 +52,7 @@ export const Home = () => {
                             justifyContent: "center",
                             alignItems: "center",
                         }}
-
                     />
-                </div>
-                <div className="seed_card">
                     <HomeIconShow
                         imgsrc={seed}
                         style={{
@@ -72,10 +69,7 @@ export const Home = () => {
                             justifyContent: "center",
                             alignItems: "center",
                         }}
-
                     />
-                </div>
-                <div className="coffee_card">
                     <HomeIconShow
                         imgsrc={coffee}
                         style={{
@@ -92,10 +86,7 @@ export const Home = () => {
                             justifyContent: "center",
                             alignItems: "center",
                         }}
-
                     />
-                </div>
-                <div className="ice_card">
                     <HomeIconShow
                         imgsrc={icecream}
                         style={{
@@ -112,9 +103,14 @@ export const Home = () => {
                             justifyContent: "center",
                             alignItems: "center",
                         }}
-
                     />
                 </div>
+            </div>
+            <div>
+                <BrowseByCategory/>
+            </div>
+            <div>
+                <BrowseByCountry/>
             </div>
         </div>
     );

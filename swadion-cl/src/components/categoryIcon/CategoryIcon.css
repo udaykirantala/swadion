@@ -1,0 +1,2 @@
+.category_icon { object-fit: contain; display: block; }
+.category_icon_fallback { display: flex; align-items: center; justify-content: center; }

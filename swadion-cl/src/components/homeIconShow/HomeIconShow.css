@@ -1,6 +1,14 @@
-.home_floting_icons img {
+.home_icon_card {
+    transition: transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.home_icon_card:hover {
+    transform: scale(1.08);
+    z-index: 2 !important;   /* inline zIndex: 1 would otherwise win, !important lifts the hovered card above its neighbours */
+}
+
+.home_icon_card img {
     width: 40px;
     height: 40px;
     object-fit: contain;
-
 }

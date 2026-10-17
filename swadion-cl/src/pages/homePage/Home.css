@@ -1,3 +1,8 @@
+.home_page {
+    margin: 0px 50px 20px 100px;
+
+}
+
 .home_page_continer {
     display: flex;
     flex-direction: row;
@@ -9,7 +14,6 @@
     margin: 0 auto;
     padding: 60px 40px;
     box-sizing: border-box;
-    margin: 0px 20px 0px 100px;
 }
 
 .home_content {
@@ -44,19 +48,4 @@
         max-width: 100%;
         height: 400px;
     }
-}
-.leaf_card:hover{
-    transform: scale(1.08);
-}
-.meat_card:hover{
-    transform: scale(1.08);
-}
-.seed_card:hover{
-    transform: scale(1.08);
-}
-.coffee_card:hover{
-    transform: scale(1.08);
-}
-.ice_card:hover{
-    transform: scale(1.08);
 }

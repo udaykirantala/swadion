@@ -13,16 +13,32 @@
   --saffron: #E3A72B;
   --saffron-dim: rgba(227, 167, 43, 0.12);
   --basil: #6B9B6E;
+
   --ramp-leaf-bg:rgba(126, 153, 54, 0.18);
   --ramp-coffee-bg:rgba(160, 105, 35, 0.22);
   --ramp-ice-bg: rgba(145, 85, 100, 0.25);
   --ramp-meat-bg:rgba(150, 85, 75, 0.20);
   --ramp-seed-bg: rgba(65, 125, 105, 0.22);
+
   --ramp-leaf-border:rgba(190, 200, 150, 0.25);
   --ramp-coffee-border:rgba(200, 170, 120, 0.28);
   --ramp-ice-border: rgba(200, 170, 175, 0.28);
   --ramp-meat-border:rgba(200, 170, 155, 0.28);
   --ramp-seed-border:rgba(160, 190, 175, 0.25);
+
+  --ramp-green-bg:rgba(126, 153, 54, 0.18);
+  --ramp-amber-bg:rgba(160, 105, 35, 0.22);
+  --ramp-pink-bg: rgba(145, 85, 100, 0.25);
+  --ramp-red-bg:rgba(150, 85, 75, 0.20);
+  --ramp-teal-bg: rgba(65, 125, 105, 0.22);
+  --ramp-blue-bg:rgba(133, 183, 235, 0.12);
+  
+  --ramp-green-border:rgba(190, 200, 150, 0.25);
+  --ramp-amber-border:rgba(200, 170, 120, 0.28);
+  --ramp-pink-border: rgba(200, 170, 175, 0.28);
+  --ramp-red-border:rgba(200, 170, 155, 0.28);
+  --ramp-teal-border:rgba(160, 190, 175, 0.25);
+  --ramp-blue-border:rgba(133, 183, 235, 0.25);
 }
 
 body {
