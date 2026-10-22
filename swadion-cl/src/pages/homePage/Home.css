@@ -1,8 +1,3 @@
-.home_page {
-    margin: 0px 50px 20px 100px;
-
-}
-
 .home_page_continer {
     display: flex;
     flex-direction: row;

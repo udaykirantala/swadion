@@ -1,3 +1,4 @@
 .outlet{
     padding-top: var(--nav-h, 72px);
+    margin: 0px 100px 20px 140px;
 }

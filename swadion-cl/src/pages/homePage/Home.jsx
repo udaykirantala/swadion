@@ -8,6 +8,7 @@ import meat from "../../assets/meat.png";
 import seed from "../../assets/seed.png";
 import { BrowseByCategory } from "../../components/browseByCategory/BrowseByCategory";
 import { BrowseByCountry } from "../../components/browseByCountry/BrowseByCountry";
+import { TrendingThisWeek } from "../../components/trendingThisWeek/TrendingThisWeek";
 
 
 export const Home = () => {
@@ -111,6 +112,9 @@ export const Home = () => {
             </div>
             <div>
                 <BrowseByCountry/>
+            </div>
+            <div>
+                <TrendingThisWeek/>
             </div>
         </div>
     );

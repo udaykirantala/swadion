@@ -1,0 +1,28 @@
+.recipes_details_nutrition {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.recipes_nutrition_card {
+    background: var(--card);
+    border: 1.5px solid var(--border);
+    padding: 16px 8px;
+    border-radius: 14px;
+    font-size: 15px;
+    width: 21%;
+    text-align: center;
+}
+.nutrition_value{
+    background: transparent;
+    color: var(--saffron);
+    font-size: 20px;
+    margin-bottom: 4px;
+}
+.nutrition_value_name{
+    background-color: transparent;
+    color: var(--text-faint);
+    font-size: 10.5px;
+    letter-spacing: .05em;
+}

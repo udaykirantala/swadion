@@ -11,11 +11,21 @@ export const getCategories = async () => {
 
     return result.data;
 }
+
 export const getCountries = async () => {
     const res = await fetch(`${API_BASE_URL}/app/swadion/countries/GetAllCountries`);
     const result = await res.json();
 
     if (!result.success) throw new Error(result.message || "Failed to fetch countries")
+
+    return result.data;
+}
+
+export const getRecipes =  async()=>{
+    const res = await fetch(`${API_BASE_URL}/app/swadion/recipes/getAllRecipes`);
+    const result = await res.json();
+
+    if(!result.success) throw new Error(result.message||"Failed to fetch recipes");
 
     return result.data;
 }

@@ -39,6 +39,16 @@
   --ramp-red-border:rgba(200, 170, 155, 0.28);
   --ramp-teal-border:rgba(160, 190, 175, 0.25);
   --ramp-blue-border:rgba(133, 183, 235, 0.25);
+
+  --ramp-green-dot:#97C459;
+  --ramp-amber-dot:#EF9F27;
+  --ramp-pink-dot: #ED93B1;
+  --ramp-red-dot:#E28A85;
+  --ramp-teal-dot:#5DCAA5;
+  --ramp-blue-dot:#85B7EB;
+  --ramp-coral-dot:#F0997B;
+  --ramp-purple-dot:#AFA9EC;
+  --ramp-fallback-fg:#B8A891;
 }
 
 body {
