@@ -6,6 +6,7 @@ import { Saved } from "../pages/saved/Saved"
 import { UnderDevelopment } from "../components/underdevelopment/Underdevelopment";
 import { RecipeDetail } from "../pages/recipeDetail/RecipeDetail";
 import { NotFound } from "../components/NotFound/NotFound";
+import { CollectionsComponet } from "../components/collections/CollectionsComponet";
 
 export const AppRoutes = () => {
     return (
@@ -16,7 +17,8 @@ export const AppRoutes = () => {
                 <Route path="/category/:categorySlug" element={<Browse />} />
                 <Route path="/country/:countrySlug" element={<Browse />} />
                 <Route path="/recipe/:id" element={<RecipeDetail />} />
-                <Route path="/saved" element={<UnderDevelopment />} />
+                <Route path="/collections" element={<CollectionsComponet />} />
+                <Route path="/search" element={<Browse />} />
                 <Route path="*" element={<NotFound />} />
             </Route>
         </Routes>

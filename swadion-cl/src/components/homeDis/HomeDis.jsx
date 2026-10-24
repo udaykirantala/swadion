@@ -1,11 +1,16 @@
 import { useState } from "react"
 import searchLog from "../../assets/search.png"
 import "./HomeDis.css"
+import { useNavigate } from "react-router-dom";
 export const HomeDis = () => {
     const [searchInput,setSearchInput] = useState();
+    const navigate = useNavigate();
     const handleSubmit = (e)=>{
         e.preventDefault();
         console.log(searchInput);
+        const query = searchInput.trim();
+        if(!query) return;
+        navigate(`/search?q=${encodeURIComponent(query)}`)
         setSearchInput("")
     }
     return (

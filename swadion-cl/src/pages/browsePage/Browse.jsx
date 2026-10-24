@@ -1,20 +1,26 @@
 import { useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 import "./Browse.css";
-import { fetchRecipes } from "../../redux/recipesRedux/RecipesSlice";
+import {fetchRecipes } from "../../redux/recipesRedux/RecipesSlice";
 import { NotFound } from "../../components/NotFound/NotFound";
 import { RecipeCard } from "../../components/recipeCard/Recipecard";
 import { fetchCategories } from "../../redux/categoryRedux/CategorySlice";
 import { fetchCountries } from "../../redux/countriesRedux/countriesSlice";
+import { clearSearchResults, fetchsearchRecipes } from "../../redux/recipesRedux/SearchRecipesSlice";
 export const Browse = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const { categorySlug, countrySlug } = useParams();
 
     const { items: recipes, status } = useSelector((state) => state.recipes);
-    const {items:categories} = useSelector((state)=>state.categories);
-    const {items:countries} = useSelector((state)=>state.countries);
+    const { items: categories, status: categoryStatus } = useSelector((state) => state.categories);
+    const { items: countries, status: countryStatus } = useSelector((state) => state.countries);
+    const { items: searchResults, status: searchStatus, error: searchError } = useSelector((state) => state.search);
+    const [searchParams] = useSearchParams();
+    const query = searchParams.get("q") || "";
+
+    console.log(query);
 
     useEffect(() => {
         if (status === "idle") dispatch(fetchRecipes());
@@ -23,21 +29,48 @@ export const Browse = () => {
 
     }, [status, dispatch]);
     useEffect(() => {
+        if (query.trim()) {
+            dispatch(fetchsearchRecipes(query.trim()));
+        } else {
+            dispatch(clearSearchResults());
+        }
+    }, [query, dispatch])
+
+
+    useEffect(() => {
         window.scrollTo({ top: 0 });
     }, [categorySlug, countrySlug]);
 
     const activeCategory = categories.find((c) => c.slug === categorySlug);
     const activeCountry = countries.find((c) => c.slug === countrySlug);
+    const filtered = useMemo(() => {
+        if (query) {
+            return searchResults;
+        }
+        return recipes.filter((recipe) => {
+            if (
+                categorySlug &&
+                recipe.category?.slug !== categorySlug
+            ) {
+                return false;
+            }
 
-    const filtered = useMemo(
-        () =>
-            recipes.filter((r) => {
-                if (categorySlug && r.category?.slug !== categorySlug) return false;
-                if (countrySlug && r.country?.slug !== countrySlug) return false;
-                return true;
-            }),
-        [recipes, categorySlug, countrySlug]
-    );
+            if (
+                countrySlug &&
+                recipe.country?.slug !== countrySlug
+            ) {
+                return false;
+            }
+
+            return true;
+        });
+    }, [
+        query,
+        searchResults,
+        recipes,
+        categorySlug,
+        countrySlug,
+    ]);
     if (status === "idle" || status === "loading") {
         return <p className="browse_loading inter-regular">Loading recipes...</p>;
     }

@@ -21,11 +21,18 @@ export const getCountries = async () => {
     return result.data;
 }
 
-export const getRecipes =  async()=>{
+export const getRecipes = async () => {
     const res = await fetch(`${API_BASE_URL}/app/swadion/recipes/getAllRecipes`);
     const result = await res.json();
 
-    if(!result.success) throw new Error(result.message||"Failed to fetch recipes");
+    if (!result.success) throw new Error(result.message || "Failed to fetch recipes");
 
+    return result.data;
+}
+
+export const getQueryRecipes = async (query) => {
+    const res = await fetch(`${API_BASE_URL}/app/swadion/recipes/search?q=${encodeURIComponent(query)}`);
+    const result = await res.json();
+    if (!result.success) throw new Error(result.message || "Failed to fetch recipes");
     return result.data;
 }

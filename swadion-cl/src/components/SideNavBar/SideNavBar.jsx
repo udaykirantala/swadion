@@ -17,14 +17,16 @@ export const SideNavBar = () => {
             path: "/browse"
         },
         {
-            name: "Saved",
-            path: "/saved"
+            name: "Collections",
+            path: "/collections"
         },
     ]
     const [searValue, setSearValue] = useState();
     const handleSearch = (e) => {
         e.preventDefault()
-        console.log(searValue);
+        const query = searValue.trim();
+        if (!query) return;
+        navigate(`/search?q=${encodeURIComponent(query)}`)
         setSearValue("")
     }
 
@@ -32,7 +34,7 @@ export const SideNavBar = () => {
         <div className="nav_continer inter-regular">
             <div className="nav_logo_links_continer">
                 <div className="nav_logo_continer">
-                    <div className="nav_name_logo_continer">
+                    <div className="nav_name_logo_continer" onClick={()=>navigate('/')}>
                         <img src={Logo} alt="nav_log" className="nav_logo_icons" />
                         <p className="fraunces-semibold nav_logo_name">Swadion</p>
                     </div>
@@ -60,11 +62,12 @@ export const SideNavBar = () => {
                             onChange={(e) => setSearValue(e.target.value)}
                             placeholder="Search dishes, ingredients..."
                         />
+                        <button type="submit" className="inter-semibold">Search</button>
                     </form>
                 </div>
-                <button className="saved_btn" onClick={()=>navigate('/saved')}>
-                    <img src={bookmarkIcon} alt="bookmark"/>
-                </button>
+                {/* <button className="saved_btn" onClick={() => navigate('/saved')}>
+                    <img src={bookmarkIcon} alt="bookmark" />
+                </button> */}
             </div>
         </div>
     )
