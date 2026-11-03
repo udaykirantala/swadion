@@ -3,7 +3,7 @@ import { CategoryIcon } from "../categoryIcon/CategoryIcon";
 import clockIcon from "../../assets/clock.png";
 import flameIcon from "../../assets/flame.png";
 import pinIcon from "../../assets/pin.png";
-import "./RecipeCard.css"
+import "./RecipeCardCo.css"
 export const RecipeCard = ({ recipe }) => {
     const navigate = useNavigate();
     const theme = recipe.category?.colorTheme || "amber";
