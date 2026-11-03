@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { fetchRecipes } from "../../redux/recipesRedux/RecipesSlice";
 import "./TrendingThisWeek.css"
-import { RecipeCard } from "../recipeCard/Recipecard";
+import { RecipeCard } from "../recipeCardCom/Recipecard";
 export const TrendingThisWeek = () => {
     const dispatch = useDispatch();
     const { items: recipes, status, error } = useSelector((state) => state.recipes);

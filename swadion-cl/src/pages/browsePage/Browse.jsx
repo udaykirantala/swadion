@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 import "./Browse.css";
 import {fetchRecipes } from "../../redux/recipesRedux/RecipesSlice";
-import { RecipeCard } from "../../components/recipeCard/Recipecard";
+import { RecipeCard } from "../../components/recipeCardCom/Recipecard";
 import { fetchCategories } from "../../redux/categoryRedux/CategorySlice";
 import { fetchCountries } from "../../redux/countriesRedux/countriesSlice";
 import { clearSearchResults, fetchsearchRecipes } from "../../redux/recipesRedux/SearchRecipesSlice";

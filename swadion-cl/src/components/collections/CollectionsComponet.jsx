@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchRecipes } from "../../redux/recipesRedux/RecipesSlice";
 import "./Collections.css";
 import { buildCollections } from "./Collections";
-import { RecipeCard } from "../recipeCard/Recipecard";
+import { RecipeCard } from "../recipeCardCom/Recipecard";
 
 const PREVIEW = 4;   // cards shown per collection before "Show all"
 
