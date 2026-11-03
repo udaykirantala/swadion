@@ -3,11 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 import "./Browse.css";
 import {fetchRecipes } from "../../redux/recipesRedux/RecipesSlice";
-import { NotFound } from "../../components/Notfound/NotFound";
 import { RecipeCard } from "../../components/recipeCard/Recipecard";
 import { fetchCategories } from "../../redux/categoryRedux/CategorySlice";
 import { fetchCountries } from "../../redux/countriesRedux/countriesSlice";
 import { clearSearchResults, fetchsearchRecipes } from "../../redux/recipesRedux/SearchRecipesSlice";
+import NotFoundPage from "../notFoundPageCom/NotFoundPage";
 export const Browse = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -76,7 +76,7 @@ export const Browse = () => {
     }
 
     if ((categorySlug && !activeCategory) || (countrySlug && !activeCountry)) {
-        return <NotFound title="Nothing found here" message="That category or country doesn't exist (yet)." />;
+        return <NotFoundPage title="Nothing found here" message="That category or country doesn't exist (yet)." />;
     }
 
     const title = activeCategory ? `${activeCategory.name} dishes` : activeCountry ? `${activeCountry.name} dishes` : "All dishes";
