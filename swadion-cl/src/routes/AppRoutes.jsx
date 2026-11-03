@@ -8,7 +8,7 @@ import { AboutPage } from "../pages/aboutPage/AboutPage";
 import { ContactPage } from "../pages/contactPage/ContactPage";
 import { PrivacyPolicyPage } from "../pages/privacyPolicyPage/PrivacyPolicyPage";
 import { TermsConditionsPage } from "../pages/termsConditionsPage/TermsConditionsPage";
-import { NotFound } from "../components/Notfound/NotFound";
+import NotFound from "../components/Notfound/NotFound";
 
 export const AppRoutes = () => {
     return (
@@ -25,7 +25,7 @@ export const AppRoutes = () => {
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/privacypolicy" element={<PrivacyPolicyPage />} />
                 <Route path="/termsconditions" element={<TermsConditionsPage />} />
-                <Route path="*" element={<NotFound />} />
+                <Route path="*" element={<NotFound/>} />
             </Route>
         </Routes>
     )

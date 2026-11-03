@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import "./NotFound.css";
 
-export const NotFound = ({
+const NotFound = ({
     title = "Page not found",
     message = "The page you're looking for doesn't exist, or may have been moved.",
 }) => {
@@ -23,3 +23,5 @@ export const NotFound = ({
         </div>
     );
 };
+
+export default NotFound;
