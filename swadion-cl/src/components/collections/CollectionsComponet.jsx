@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchRecipes } from "../../redux/recipesRedux/RecipesSlice";
 import "./Collections.css";
 import { buildCollections } from "./Collections";
-import { RecipeCard } from "../recipeCardCom/Recipecard";
+import { RecipeCardComponent } from "../recipeCardCom/RecipeCardComponent";
 
 const PREVIEW = 4;   // cards shown per collection before "Show all"
 
@@ -54,7 +54,7 @@ export const CollectionsComponet = () => {
                         </div>
                         <div className="collections_grid">
                             {shown.map((recipe) => (
-                                <RecipeCard key={recipe._id} recipe={recipe} />
+                                <RecipeCardComponent key={recipe._id} recipe={recipe} />
                             ))}
                         </div>
                     </section>

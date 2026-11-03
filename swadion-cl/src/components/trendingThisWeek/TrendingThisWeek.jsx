@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { fetchRecipes } from "../../redux/recipesRedux/RecipesSlice";
 import "./TrendingThisWeek.css"
-import { RecipeCard } from "../recipeCardCom/Recipecard";
+import { RecipeCardComponent } from "../recipeCardCom/RecipeCardComponent";
 export const TrendingThisWeek = () => {
     const dispatch = useDispatch();
     const { items: recipes, status, error } = useSelector((state) => state.recipes);
@@ -30,7 +30,7 @@ export const TrendingThisWeek = () => {
             ) : (
                 <div className="trending_grid">
                     {trendingRecipes.map((recipe) => (
-                        <RecipeCard key={recipe._id} recipe={recipe} />
+                        <RecipeCardComponent key={recipe._id} recipe={recipe} />
                     ))}
                 </div>
             )}

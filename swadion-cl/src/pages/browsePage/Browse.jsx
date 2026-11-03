@@ -3,11 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 import "./Browse.css";
 import {fetchRecipes } from "../../redux/recipesRedux/RecipesSlice";
-import { RecipeCard } from "../../components/recipeCardCom/Recipecard";
 import { fetchCategories } from "../../redux/categoryRedux/CategorySlice";
 import { fetchCountries } from "../../redux/countriesRedux/countriesSlice";
 import { clearSearchResults, fetchsearchRecipes } from "../../redux/recipesRedux/SearchRecipesSlice";
 import NotFoundPage from "../notFoundPageCom/NotFoundPage";
+import { RecipeCardComponent } from "../../components/recipeCardCom/RecipeCardComponent";
 export const Browse = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -136,7 +136,7 @@ export const Browse = () => {
                 ) : (
                     <div className="browse_grid">
                         {filtered.map((recipe) => (
-                            <RecipeCard key={recipe._id} recipe={recipe} />
+                            <RecipeCardComponent key={recipe._id} recipe={recipe} />
                         ))}
                     </div>
                 )}
