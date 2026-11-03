@@ -1,0 +1,39 @@
+.policy_page_continer {
+    padding: 44px 40px 80px;
+    max-width: 720px;
+}
+
+.policy_page_heding {
+    background-color: transparent;
+    color: var(--text);
+    font-size: 32px;
+}
+
+.policy_section_heding {
+    background-color: transparent;
+    color: var(--text);
+    font-size: 20px;
+    margin: 34px 0px 10px;
+}
+
+.policy_section_paragraph {
+    background-color: transparent;
+    color: var(--text-dim);
+    font-size: 14.5px;
+    line-height: 1.75;
+    margin-bottom: 14px;
+}
+
+.policy_page_continer li {
+    background-color: transparent;
+    color: var(--text-dim);
+    font-size: 14.5px;
+    line-height: 1.75;
+    margin-bottom: 14px;
+}
+.link_inside_text{
+    background-color: transparent;
+    color: var(--saffron);
+    padding-left: 10px;
+    cursor: pointer;
+}

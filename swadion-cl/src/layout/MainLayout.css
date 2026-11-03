@@ -1,4 +1,13 @@
-.outlet{
+.outlet {
     padding-top: var(--nav-h, 72px);
     margin: 0px 100px 20px 140px;
+}
+
+.footer {
+    padding-top: var(--nav-h, 72px);
+    padding: 0px 100px 20px 140px;
+    margin-top: 60px;
+    background-color: var(--bg-elev);
+    border: 0.5px solid var(--border);
+
 }
