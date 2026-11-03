@@ -2,15 +2,13 @@ import { Route, Routes } from "react-router-dom";
 import { MainLayout } from "../layout/MainLayout";
 import { Home } from "../pages/homePage/Home";
 import { Browse } from "../pages/browsePage/Browse";
-import { Saved } from "../pages/saved/Saved"
-import { UnderDevelopment } from "../components/underdevelopment/Underdevelopment";
 import { RecipeDetail } from "../pages/recipeDetail/RecipeDetail";
-import { NotFound } from "../components/NotFound/NotFound";
 import { CollectionsComponet } from "../components/collections/CollectionsComponet";
 import { AboutPage } from "../pages/aboutPage/AboutPage";
 import { ContactPage } from "../pages/contactPage/ContactPage";
 import { PrivacyPolicyPage } from "../pages/privacyPolicyPage/PrivacyPolicyPage";
 import { TermsConditionsPage } from "../pages/termsConditionsPage/TermsConditionsPage";
+import { NotFound } from "../components/Notfound/NotFound";
 
 export const AppRoutes = () => {
     return (

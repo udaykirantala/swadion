@@ -1,10 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import "./NotFound.css";
 
-// Used in two places:
-//   1. The catch-all route (path="*") for any URL that doesn't exist.
-//   2. Inside a page when its data isn't found, e.g. /recipe/some-slug that
-//      isn't in the database:  if (!recipe) return <NotFound title="Recipe not found" />
 export const NotFound = ({
     title = "Page not found",
     message = "The page you're looking for doesn't exist, or may have been moved.",
