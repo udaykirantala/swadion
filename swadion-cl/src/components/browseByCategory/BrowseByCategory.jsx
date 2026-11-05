@@ -11,6 +11,9 @@ export const BrowseByCategory = () => {
     const { items: recipes, status: recipesStatus } = useSelector((state) => state.recipes);
     const navigate = useNavigate();
 
+    console.log(categories);
+    
+
     useEffect(() => {
         if (status === "idle") {
             dispatch(fetchCategories())

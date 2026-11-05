@@ -2,12 +2,13 @@ import { useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 import "./Browse.css";
-import {fetchRecipes } from "../../redux/recipesRedux/RecipesSlice";
+import { fetchRecipes } from "../../redux/recipesRedux/RecipesSlice";
 import { fetchCategories } from "../../redux/categoryRedux/CategorySlice";
 import { fetchCountries } from "../../redux/countriesRedux/countriesSlice";
 import { clearSearchResults, fetchsearchRecipes } from "../../redux/recipesRedux/SearchRecipesSlice";
 import NotFoundPage from "../notFoundPageCom/NotFoundPage";
 import { RecipeCardComponent } from "../../components/recipeCardCom/RecipeCardComponent";
+import Loading from "../../components/common/loadingCom/Loading";
 export const Browse = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -19,8 +20,16 @@ export const Browse = () => {
     const { items: searchResults, status: searchStatus, error: searchError } = useSelector((state) => state.search);
     const [searchParams] = useSearchParams();
     const query = searchParams.get("q") || "";
+    const isInitialLoading =
+        status === "idle" ||
+        status === "loading" ||
+        categoryStatus === "idle" ||
+        categoryStatus === "loading" ||
+        countryStatus === "idle" ||
+        countryStatus === "loading";
 
-    console.log(query);
+    const isSearchLoading =
+        query.trim() && searchStatus === "loading";
 
     useEffect(() => {
         if (status === "idle") dispatch(fetchRecipes());
@@ -28,13 +37,14 @@ export const Browse = () => {
         if (status === "idle") dispatch(fetchCountries());
 
     }, [status, dispatch]);
+
     useEffect(() => {
         if (query.trim()) {
             dispatch(fetchsearchRecipes(query.trim()));
         } else {
             dispatch(clearSearchResults());
         }
-    }, [query, dispatch])
+    }, [status, categoryStatus, countryStatus, dispatch])
 
 
     useEffect(() => {
@@ -71,8 +81,16 @@ export const Browse = () => {
         categorySlug,
         countrySlug,
     ]);
-    if (status === "idle" || status === "loading") {
-        return <p className="browse_loading inter-regular">Loading recipes...</p>;
+
+
+    if (isInitialLoading) {
+        return (
+            <Loading
+                message="Browse your recipes..."
+                description="We're gathering recipes from around the world."
+                size="large"
+            />
+        );
     }
 
     if ((categorySlug && !activeCategory) || (countrySlug && !activeCountry)) {
@@ -131,12 +149,23 @@ export const Browse = () => {
                 <h1 className="browse_title fraunces-medium">{title}</h1>
                 <p className="browse_desc inter-regular">{description}</p>
 
-                {filtered.length === 0 ? (
-                    <p className="browse_empty inter-regular">No recipes here yet. Check back soon.</p>
+                {isSearchLoading ? (
+                    <Loading
+                        message="Finding delicious recipes..."
+                        description="Searching our collection for you."
+                        size="medium"
+                    />
+                ) : filtered.length === 0 ? (
+                    <p className="browse_empty inter-regular">
+                        No recipes here yet. Check back soon.
+                    </p>
                 ) : (
                     <div className="browse_grid">
                         {filtered.map((recipe) => (
-                            <RecipeCardComponent key={recipe._id} recipe={recipe} />
+                            <RecipeCardComponent
+                                key={recipe._id}
+                                recipe={recipe}
+                            />
                         ))}
                     </div>
                 )}

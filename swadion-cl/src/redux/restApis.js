@@ -1,6 +1,33 @@
-const API_BASE_URL = "http://localhost:9502";
+const API_BASE_URL = "https://swadion.onrender.com";
 const BASE_URL = `${API_BASE_URL}/app/swadion/category`;
 
+
+export const checkBackendHealth = async () => {
+    const maxAttempts = 12;
+    const retryDelay = 5000;
+
+    for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+        try {
+            const response = await fetch(`${API_BASE_URL}/health`, {
+                signal: AbortSignal.timeout(10000),
+            });
+
+            if (response.ok) {
+                return true;
+            }
+        } catch (error) {
+            console.log(`Backend connection attempt: ${attempt}`);
+        }
+
+        if (attempt < maxAttempts) {
+            await new Promise(resolve =>
+                setTimeout(resolve, retryDelay)
+            );
+        }
+    }
+
+    throw new Error("Server is taking longer than expected. Please try again.");
+};
 
 
 export const getCategories = async () => {

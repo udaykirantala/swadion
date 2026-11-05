@@ -1,0 +1,97 @@
+
+.swadion-loading {
+    width: 100%;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 32px 20px;
+    box-sizing: border-box;
+    background: var(--bg);
+    text-align: center;
+}
+
+.swadion-loading--fullscreen {
+    min-height: 100vh;
+}
+
+.swadion-loader {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.swadion-loader--small {
+    width: 32px;
+    height: 32px;
+}
+
+.swadion-loader--medium {
+    width: 64px;
+    height: 64px;
+}
+
+.swadion-loader--large {
+    width: 96px;
+    height: 96px;
+}
+
+.swadion-loader__ring {
+    position: absolute;
+    inset: 0;
+    border: 4px solid var(--card-hi);
+    border-top-color: var(--saffron);
+    border-right-color: var(--saffron);
+    border-radius: 50%;
+    animation: swadion-spin 0.9s linear infinite;
+}
+
+.swadion-loader__dot {
+    width: 9px;
+    height: 9px;
+    background: var(---chili-dim);
+    background: #F0997B;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 5px;
+}
+
+.swadion-loading__title {
+    color: var(--textPrimary);
+    font-family: "Fraunces", serif;
+    font-size: 22px;
+    font-weight: 600;
+    margin: 8px 0 0;
+}
+
+.swadion-loading__description {
+    color: var(--text-dim);
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.swadion-loading__brand {
+    color: var(--text-faint);
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    margin-top: 18px;
+}
+
+@keyframes swadion-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .swadion-loader__ring {
+        animation-duration: 2.5s;
+    }
+}
