@@ -38,6 +38,7 @@ export const BrowseByCategory = () => {
     };
     return (
         <div>
+            
             <div className="category_heading fraunces-medium">
                 <h2>Browse by category</h2>
             </div>

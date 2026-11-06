@@ -48,13 +48,14 @@ export const Footer = () => {
             name: "Privacy Policy",
             path: "/privacypolicy"
         },
-                {
+        {
             name: "Terms & Conditions",
             path: "/termsconditions"
         },
-    ]    
+    ]
     return (
         <div>
+
             <div className="footer_continer">
                 <div className="nav_logo_continer">
                     <div className="nav_name_logo_continer" onClick={() => navigate('/')}>
@@ -65,47 +66,49 @@ export const Footer = () => {
                         Recipes from every country, with calories and measurements that scale to your table.
                     </p>
                 </div>
-                <div className="footer_column_explore">
-                    <p className="footer_column_heading inter-semibold">EXPLORE</p>
-                    <div className="footer_links_continer">
-                        {navLinks.map((item, index) => (
-                            <div
-                                key={index}
-                                onClick={() => navigate(item.path)}
-                            >
-                                <p className="footer_link inter-regular">{item.name}</p>
-                            </div>
-                        ))}
+                <div className="footer_column_explore_continer">
+                    <div className="footer_column_explore">
+                        <p className="footer_column_heading inter-semibold">EXPLORE</p>
+                        <div className="footer_links_continer">
+                            {navLinks.map((item, index) => (
+                                <div
+                                    key={index}
+                                    onClick={() => navigate(item.path)}
+                                >
+                                    <p className="footer_link inter-regular">{item.name}</p>
+                                </div>
+                            ))}
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <p className="footer_column_heading inter-semibold">
-                        CATEGORIES
-                    </p>
-                    <div className="footer_links_continer">
-                        {CategoriesLinks.map((item, index) => (
-                            <div
-                                key={index}
-                                onClick={() => navigate(`/category/${item.slug}`)}
-                            >
-                                <p className="footer_link inter-regular">{item.name}</p>
-                            </div>
-                        ))}
+                    <div>
+                        <p className="footer_column_heading inter-semibold">
+                            CATEGORIES
+                        </p>
+                        <div className="footer_links_continer">
+                            {CategoriesLinks.map((item, index) => (
+                                <div
+                                    key={index}
+                                    onClick={() => navigate(`/category/${item.slug}`)}
+                                >
+                                    <p className="footer_link inter-regular">{item.name}</p>
+                                </div>
+                            ))}
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <p className="footer_column_heading inter-semibold">
-                        COUNTRIES
-                    </p>
-                    <div className="footer_links_continer">
-                        {CountrysLinks.map((item, index) => (
-                            <div
-                                key={index}
-                                onClick={() => navigate(`/country/${item.slug}`)}
-                            >
-                                <p className="footer_link inter-regular">{item.name}</p>
-                            </div>
-                        ))}
+                    <div>
+                        <p className="footer_column_heading inter-semibold">
+                            COUNTRIES
+                        </p>
+                        <div className="footer_links_continer">
+                            {CountrysLinks.map((item, index) => (
+                                <div
+                                    key={index}
+                                    onClick={() => navigate(`/country/${item.slug}`)}
+                                >
+                                    <p className="footer_link inter-regular">{item.name}</p>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>

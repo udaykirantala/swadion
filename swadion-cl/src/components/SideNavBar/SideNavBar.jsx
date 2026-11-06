@@ -2,6 +2,13 @@ import { useState } from "react";
 import Logo from "../../assets/logo.png";
 import SearchIcon from "../../assets/search.png";
 import bookmarkIcon from "../../assets/bookmark.png";
+import HomeIcon from "../../assets/swadion-home-icon.png";
+import BrowseIcon from "../../assets/swadion-browse-icon.png";
+import CollectionIcon from "../../assets/swadion-collections-icon.png";
+import HomeIconactive from "../../assets/swadion-home-icon-active.png";
+import BrowseIconactive from "../../assets/swadion-browse-icon-active.png";
+import CollectionIconactive from "../../assets/swadion-collections-icon-active.png";
+
 import "./SideNavBar.css";
 import { useLocation, useNavigate } from "react-router-dom"
 export const SideNavBar = () => {
@@ -10,18 +17,24 @@ export const SideNavBar = () => {
     const navLinks = [
         {
             name: "Home",
-            path: "/"
+            path: "/",
+            icon: HomeIcon,
+            activeIcon: HomeIconactive
         },
         {
             name: "Browse",
-            path: "/browse"
+            path: "/browse",
+            icon: BrowseIcon,
+            activeIcon: BrowseIconactive
         },
         {
             name: "Collections",
-            path: "/collections"
+            path: "/collections",
+            icon: CollectionIcon,
+            activeIcon: CollectionIconactive
         },
     ]
-    const [searValue, setSearValue] = useState();
+    const [searValue, setSearValue] = useState("");
     const handleSearch = (e) => {
         e.preventDefault()
         const query = searValue.trim();
@@ -31,44 +44,65 @@ export const SideNavBar = () => {
     }
 
     return (
-        <div className="nav_continer inter-regular">
-            <div className="nav_logo_links_continer">
-                <div className="nav_logo_continer">
-                    <div className="nav_name_logo_continer" onClick={()=>navigate('/')}>
-                        <img src={Logo} alt="nav_log" className="nav_logo_icons" />
-                        <p className="fraunces-semibold nav_logo_name">Swadion</p>
+        <>
+
+            <div className="nav_continer inter-regular">
+                <div className="nav_logo_links_continer">
+                    <div className="nav_logo_continer">
+                        <div className="nav_name_logo_continer" onClick={() => navigate('/')}>
+                            <img src={Logo} alt="nav_log" className="nav_logo_icons" />
+                            <p className="fraunces-semibold nav_logo_name">Swadion</p>
+                        </div>
+                    </div>
+                    <div className="nav_links_continer">
+                        {navLinks.map((item, index) => (
+                            <div
+                                key={index}
+                                onClick={() => navigate(item.path)}
+                                className={`nav_link_item ${location.pathname === item.path ? "active" : ""}`}
+                            >
+                                <p className="nav_link inter-regular">{item.name}</p>
+                            </div>
+                        ))}
                     </div>
                 </div>
-                <div className="nav_links_continer">
-                    {navLinks.map((item, index) => (
-                        <div
-                            key={index}
-                            onClick={() => navigate(item.path)}
-                            className={`nav_link_item ${location.pathname === item.path ? "active" : ""}`}
-                        >
-                            <p className="nav_link inter-regular">{item.name}</p>
-                        </div>
-                    ))}
-                </div>
-            </div>
-            <div className="nav_search_save_continer">
-                <div className="nav_search_continer">
-                    <img src={SearchIcon} alt="searchIcon" />
-                    <form onSubmit={handleSearch}>
-                        <input
-                            type="text"
-                            name="searchGlo"
-                            value={searValue}
-                            onChange={(e) => setSearValue(e.target.value)}
-                            placeholder="Search dishes, ingredients..."
-                        />
-                        <button type="submit" className="inter-semibold">Search</button>
-                    </form>
-                </div>
-                {/* <button className="saved_btn" onClick={() => navigate('/saved')}>
+                <div className="nav_search_save_continer">
+                    <div className="nav_search_continer">
+                        <img src={SearchIcon} alt="searchIcon" />
+                        <form onSubmit={handleSearch}>
+                            <input
+                                type="text"
+                                name="searchGlo"
+                                value={searValue}
+                                onChange={(e) => setSearValue(e.target.value)}
+                                placeholder="Search dishes, ingredients..."
+                            />
+                            <button type="submit" className="inter-semibold">Search</button>
+                        </form>
+                    </div>
+                    {/* <button className="saved_btn" onClick={() => navigate('/saved')}>
                     <img src={bookmarkIcon} alt="bookmark" />
                 </button> */}
+                </div>
             </div>
-        </div>
+            <nav className="mobile_bottom_nav">
+                {navLinks.map((item) => (
+                    <button
+                        key={item.path}
+                        onClick={() => navigate(item.path)}
+                        className={
+                            location.pathname === item.path
+                                ? "mobile_nav_item active"
+                                : "mobile_nav_item"
+                        }
+                    >
+                        <div>
+                            <img src={location.pathname===item.path?item.activeIcon:item.icon} alt={item.name} width="24px" />
+                            <p className="fraunces-semibold nav_logo_name_mobile">{item.name}</p>
+                        </div>
+                    </button>
+                ))}
+            </nav>
+        </>
     )
 }

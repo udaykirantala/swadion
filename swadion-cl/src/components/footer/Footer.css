@@ -1,15 +1,28 @@
-.footer_continer{
+.footer_continer {
     display: flex;
-    justify-content: space-between;
-    align-items:flex-start;
+    align-items: flex-start;
     margin-top: 30px;
+    gap: 90px;
 }
-.footer_logo_name{
+
+.nav_logo_continer {
+    width: 40%;
+}
+
+.footer_column_explore_continer {
+    display: flex;
+    align-items: self-start;
+    width: 60%;
+    gap: 180px;
+}
+
+.footer_logo_name {
     background-color: transparent;
     color: var(--text);
     font-size: 22px;
 }
-.footer_blurd{
+
+.footer_blurd {
     background-color: transparent;
     color: var(--text-dim);
     font-size: 13px;
@@ -17,24 +30,28 @@
     max-width: 280px;
     margin-top: 14px;
 }
-.footer_column_heading{
+
+.footer_column_heading {
     background-color: transparent;
     color: var(--text-faint);
     font-size: 11px;
     letter-spacing: .09em;
     margin-bottom: 14px;
 }
-.footer_link{
+
+.footer_link {
     background-color: transparent;
     color: var(--text-dim);
     font-size: 13.5px;
     padding: 5px 0px;
     margin: 0px;
 }
-.footer_link:hover{
+
+.footer_link:hover {
     color: var(--text);
 }
-.bottom_bar_continer{
+
+.bottom_bar_continer {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -42,16 +59,63 @@
     padding: 22px 0px 30px;
     margin-top: 20px;
 }
-.copyright_line{
+
+.copyright_line {
     background-color: transparent;
     color: var(--text-faint);
     font-size: 12px;
     max-width: 250px;
-    margin:0px ;
+    margin: 0px;
 }
-.bottom_bar_links{
+
+.bottom_bar_links {
     display: flex;
     justify-content: baseline;
     align-items: center;
     gap: 20px;
+}
+
+@media(max-width:768px) {
+    .footer_continer {
+        flex-direction: column;
+        gap: 0px;
+    }
+
+    .footer_column_explore_continer {
+        gap: 80px;
+    }
+
+    .nav_logo_continer {
+        width: 100%;
+        display: flex;
+        justify-content: baseline;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .footer_blurd {
+        font-size: 10px;
+        padding-top: 10px;
+    }
+
+    .footer_column_heading {
+        font-size: 8px;
+    }
+
+    .footer_link {
+        font-size: 10px;
+    }
+
+    .copyright_line {
+        font-size: 10px;
+        max-width: 280px;
+    }
+
+    .bottom_bar_continer {
+        padding: 22px 0px 5px;
+    }
+
+    .bottom_bar_links {
+        gap: 10px;
+    }
 }

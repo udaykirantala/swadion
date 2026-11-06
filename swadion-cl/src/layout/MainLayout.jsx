@@ -33,12 +33,10 @@ export const MainLayout = () => {
     }, []);
 
     return (
-        <div>
-            <div>
-                <SideNavBar />
-            </div>
+        <div className="main-layout">
+            <SideNavBar />
 
-            <div className="outlet">
+            <main className="outlet">
                 {isChecking ? (
                     <Loading
                         message="Preparing your recipes..."
@@ -55,7 +53,7 @@ export const MainLayout = () => {
                         retryText="Try Again"
                     />
                 )}
-            </div>
+            </main>
 
             {isConnected && (
                 <div className="footer">

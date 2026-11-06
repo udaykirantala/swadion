@@ -106,15 +106,107 @@ export const Home = () => {
                         }}
                     />
                 </div>
+                <div className="home_floting_icons_mobile">
+                    <HomeIconShow
+                        imgsrc={leaf}
+                        style={{
+                            backgroundColor: "var(--ramp-leaf-bg)",
+                            borderRadius: "10px",
+                            border: "1px solid var(--ramp-leaf-border)",
+                            position: "absolute",
+                            width:"70px",
+                            height: "50px",
+                            top: "-70px",
+                            left: "5px",
+                            zIndex: 1,
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                        }}
+                        imgwidth="10px"
+                    />
+                    <HomeIconShow
+                        imgsrc={meat}
+                        style={{
+                            backgroundColor: "var(--ramp-meat-bg)",
+                            borderRadius: "10px",
+                            border: "1px solid var(--ramp-meat-border)",
+                            position: "absolute",
+                            width: "70px",
+                            height: "50px",
+                            top: "-80px",
+                            left: "85px",
+                            zIndex: 1,
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                        }}
+                        imgwidth="10px"
+                    />
+                    <HomeIconShow
+                        imgsrc={seed}
+                        style={{
+                            backgroundColor: "var(--ramp-seed-bg)",
+                            borderRadius: "10px",
+                            border: "1px solid var(--ramp-seed-border)",
+                            position: "absolute",
+                            width: "85px",
+                            height: "75px",
+                            top: "-20px",
+                            left: "100px",
+                            zIndex: 1,
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                        }}
+                        imgwidth="10px"
+                    />
+                    <HomeIconShow
+                        imgsrc={coffee}
+                        style={{
+                            backgroundColor: "var(--ramp-coffee-bg)",
+                            borderRadius: "10px",
+                            border: "1px solid var(--ramp-coffee-border)",
+                            position: "absolute",
+                            width: "60px",
+                            height: "40px",
+                            top: "17px",
+                            left: "15px",
+                            zIndex: 1,
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                        }}
+                        imgwidth="10px"
+
+                    />
+                    <HomeIconShow
+                        imgsrc={icecream}
+                        style={{
+                            backgroundColor: "var(--ramp-ice-bg)",
+                            borderRadius: "10px",
+                            border: "1px solid var(--ramp-ice-border)",
+                            position: "absolute",
+                            width: "60px",
+                            height: "40px",
+                            top: "-25px",
+                            left: "0px",
+                            zIndex: 1,
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                        }}
+                    />
+                </div>
             </div>
             <div>
-                <BrowseByCategory/>
+                <BrowseByCategory />
             </div>
             <div>
-                <BrowseByCountry/>
+                <BrowseByCountry />
             </div>
             <div>
-                <TrendingThisWeek/>
+                <TrendingThisWeek />
             </div>
         </div>
     );

@@ -38,3 +38,9 @@
 }
 .recipe_card_meta span { display: flex; align-items: center; gap: 4px; }
 .recipe_card_meta img { width: 11px; height: 11px; }
+
+@media(max-width:768px){
+    .recipe_card_image {
+    height: 100px;
+}
+}

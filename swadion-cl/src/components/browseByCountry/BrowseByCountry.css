@@ -4,27 +4,46 @@
     font-size: 18px;
 }
 
-.countries_continer{
+.countries_continer {
     display: flex;
-    justify-content:baseline;
+    justify-content: baseline;
     align-items: center;
     flex-wrap: wrap;
     gap: 20px;
     background: transparent;
 }
-.countrie_chip{
+
+.countrie_chip {
     background: transparent;
-    color: var(	--text-dim);
+    color: var(--text-dim);
     font-size: 14px;
     padding: 6px 18px;
     border-radius: 18px;
     border: 1.5px solid var(--border-hi);
 }
-.countrie_chip p{
+
+.countrie_chip p {
     margin: 0%;
 }
-.countrie_chip:hover{
+
+.countrie_chip:hover {
     border: 1.5px solid var(--saffron);
     color: var(--text);
     cursor: pointer;
+}
+
+@media(max-width:768px) {
+    .countires_heading {
+        font-size: 12px;
+    }
+
+    .countries_continer {
+        gap: 5px;
+    }
+
+    .countrie_chip {
+        font-size: 10px;
+        padding: 4px 12px;
+        border-radius: 10px;
+    }
 }

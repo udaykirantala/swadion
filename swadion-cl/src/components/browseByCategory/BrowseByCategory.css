@@ -58,3 +58,22 @@
     color: var(--text-faint);
     font-size: 10.5px;
 }
+
+
+@media(max-width:768px) {
+    .category_continer{
+        gap: 14px;
+    }
+    .category_heading {
+        font-size: 12px;
+    }
+
+    .cat_tile {
+        width: 21.99%;
+        padding: 20px 14px;
+        text-align: center;
+    }
+    .cat_tile_jar{
+        margin-left: 14px;
+    }
+}

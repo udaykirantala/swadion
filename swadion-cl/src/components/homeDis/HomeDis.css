@@ -1,50 +1,61 @@
-.home_dis_headline{
+.home_dis_headline {
     background-color: transparent;
     color: var(--text);
     font-size: 46px;
     line-height: 1.12;
-    letter-spacing:.01em;
+    letter-spacing: .01em;
 }
-.spcial_text{
+
+.spcial_text {
     background-color: transparent;
     color: var(--saffron);
     padding: 0px 8px;
     font-size: 46px;
 }
-.home_dis_sub_text{
+
+.home_dis_sub_text {
     background-color: transparent;
     color: var(--text-dim);
     font-size: 15px;
     line-height: 1.6;
     max-width: 440px;
 }
-.home_dis_search_continer{
+
+.search_logo_home_dis {
+    width: 20px;
+}
+
+.home_dis_search_continer {
     display: flex;
     justify-content: baseline;
     align-items: center;
     background-color: var(--card);
     border-radius: 14px;
-    padding: 14px 18px ;
+    padding: 14px 18px;
     border: var(--border-hi) solid 2px;
     gap: 10px;
     width: max-content;
 }
+
 .home_dis_search_continer input {
     background-color: var(--card);
     border: none;
     width: 275px;
     color: var(--text);
 }
+
 .home_dis_search_continer input:focus {
     outline: none;
     border: none;
     box-shadow: none;
 }
+
 .home_dis_search_continer input::placeholder {
     color: var(--text-faint);
     font-size: 14px;
 }
-.home_dis_search_continer button{
+
+.home_dis_search_continer button {
     background-color: var(--saffron);
     color: #1C1712;
     font-size: 13px;
@@ -52,4 +63,49 @@
     padding: 9px 16px;
     border: none;
     margin-left: 10px;
+}
+
+
+@media(max-width: 768px) {
+    .home_dis_headline {
+        font-size: 16px;
+        line-height: 1.01;
+        letter-spacing: 0.01em;
+        max-width: 190px;
+    }
+
+    .spcial_text {
+        padding: 0px 3px;
+        font-size: 16px;
+    }
+
+    .home_dis_sub_text {
+        font-size: 10px;
+        line-height: 1.6;
+        max-width: 180px;
+    }
+
+    .home_dis_search_continer input {
+        width: 60px;
+    }
+
+    .home_dis_search_continer input::placeholder {
+        font-size: 10px;
+    }
+
+    .search_logo_home_dis {
+        width: 10px;
+    }
+
+    .home_dis_search_continer button {
+        font-size: 10px;
+        padding: 4px 10px;
+        margin-left: 6px;
+        border-radius: 5px;
+    }
+
+    .home_dis_search_continer {
+        padding: 6px 8px;
+        border-radius: 7px;
+    }
 }

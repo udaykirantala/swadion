@@ -15,6 +15,7 @@ export const HomeDis = () => {
     }
     return (
         <div>
+
             <div>
                 <h1 className="home_dis_headline fraunces-medium">Every dish has a 
                     <span className="fraunces-medium-italic spcial_text">country</span> 
@@ -27,7 +28,7 @@ export const HomeDis = () => {
                 </p>
             </div>
             <div className="home_dis_search_continer">
-                <img src={searchLog} alt="searchLog" width="20px"/>
+                <img src={searchLog} alt="searchLog" className="search_logo_home_dis"/>
                 <form onSubmit={handleSubmit}>
                     <input 
                     type="text" 
